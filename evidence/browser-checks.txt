@@ -1,0 +1,17 @@
+BROWSER WALKTHROUGH RECORD
+Date: 25 November 2026
+Environment: Codex in-app browser, local HTTP server, fictional records only.
+
+Observed results:
+1. Ambiguous request: three appointment buttons appeared; all three records remained active.
+2. Dental selection: preview showed A101 with date/time; record still active; input disabled while review controls remained available.
+3. Confirm: dental became cancelled and two active records remained.
+4. Undo: dental restored and three active records remained.
+5. Omission demo: only dental and eye candidates appeared; disclosure said two of three possible records.
+6. None of these + Friday: physiotherapy A103 preview appeared even though it was absent from the candidate list; all records still active before confirmation.
+7. Go back and correct: pending preview discarded and free-text input available again.
+8. General repetition: generic repeat request appeared for the same ambiguous input.
+9. Targeted question: assistant requested service, date or ID for the same ambiguous input.
+10. Screenshot inspected: actual rendered interface shows schedule, candidates, rejection, input and local-simulation disclosure.
+
+Limitations: not a participant study; no timing or cognitive-load measurement; no completed mobile or screen-reader audit. Browser controls and exported events are inspection aids, not proof of comparative usability.

@@ -1,0 +1,33 @@
+✔ ambiguous request exposes three candidates without changing any record (1.5529ms)
+✔ repeat: specific follow-up reaches preview without executing (0.3332ms)
+✔ repeat: confirmation executes once and undo restores (0.1789ms)
+✔ targeted: specific follow-up reaches preview without executing (0.0915ms)
+✔ targeted: confirmation executes once and undo restores (0.0851ms)
+✔ options: specific follow-up reaches preview without executing (0.0894ms)
+✔ options: confirmation executes once and undo restores (0.07ms)
+✔ omitted candidate remains recoverable through free text (0.1296ms)
+✔ correction replaces interpretation and does not change discarded record (0.1201ms)
+✔ stop discards pending action and confirmation becomes inert (0.1934ms)
+✔ invented candidate cannot be selected (0.1282ms)
+✔ candidate not displayed cannot bypass omission demonstration (0.076ms)
+✔ multiple stated services remain ambiguous rather than executing (0.5054ms)
+✔ unknown day does not silently choose a record (0.0967ms)
+✔ unsupported action is declined (0.6147ms)
+✔ full ISO date resolves stored record (0.0753ms)
+✔ appointment ID resolves stored record (0.054ms)
+✔ empty input cannot produce an action (0.0751ms)
+✔ text received during preview cannot replace consent (0.079ms)
+✔ repeated generic input in baseline does not fabricate certainty (0.0634ms)
+✔ duplicate request after completed action does not execute again (0.0664ms)
+✔ independent sessions do not share mutable records (0.0644ms)
+✔ instruction-like input cannot authorise unknown tools (0.0548ms)
+✔ stale preview is revalidated at commit (0.0732ms)
+✔ confirmation without preview is inert (0.0518ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.6601

@@ -1,0 +1,64 @@
+# RepairLab
+
+README prose word count: to be calculated in the packaged version.
+
+## Project status
+
+Implemented: local interface, three repair prompts, deterministic record matching, selectable candidates, candidate rejection, confirmation, correction, stopping, one-step undo, event export and automated checks.
+
+Simulated: appointments, ambiguous interpretation and deliberately incomplete candidate coverage. Interpretation uses lexical rules; there is no trained language model, probability estimate, semantic ranking or provider API. The prototype demonstrates the interaction around an intelligent component rather than claiming general language understanding.
+
+Not implemented: speech, booking, authentication, persistent storage, live integrations or user research. Refresh and changes to strategy or coverage reset the session.
+
+## Run or inspect
+
+Open `index.html` in a modern browser; no installation, API key, paid service or server is required. Alternatively use a local static server:
+
+```console
+python -m http.server 8766 --bind 127.0.0.1
+```
+
+Then open `http://127.0.0.1:8766`.
+
+Tests need Node.js with its built-in test runner, without npm installation:
+
+```console
+node --test tests/core.test.cjs
+node scripts/replay.cjs
+```
+
+## Walkthroughs
+
+1. Choose Candidate options, then An ambiguous request. Select Dental check, review the interpretation, confirm and undo; the status returns to Active.
+2. Click Intention missing from options. Imagine intending Friday physiotherapy. Choose None of these, type Friday and send. Review A103 before confirming; the other records remain active.
+3. Reset. Send Cancel dental, choose Go back and correct, then send eye. Confirm only the eye appointment.
+4. Select General repetition or Targeted question and send the same ambiguous request to inspect the different repair prompts. These settings are demonstrations, not experimental results.
+
+## Architecture and technology
+
+HTML and CSS provide the browser interface. `app.js` renders DOM state and binds controls. `core.js` owns interpretation, repair policy, session state, record validation and actions; Node imports the same module for tests. All data is fictional and held in memory. No outgoing requests are made by the application.
+
+## Development record
+
+- `bf5d947`: implemented the bounded controller and 25 behavioural checks before building the interface.
+- `cf29515`: added the schedule, conversation, strategy selection, omission demo, confirmation and recovery controls.
+- `33ae597`: recorded reproducible replays, citation boundaries and an actual browser screenshot.
+- Subsequent commits add documentation, report assets and verification records; use `git log --oneline` to inspect the actual history. Commits identify Codex-assisted development rather than attributing unperformed work to the student.
+
+The shared core keeps prompt comparisons from silently changing action logic. The report narrows the earlier broad superiority question to inspectable correction and cancellation boundaries. Teacher rubric screenshots prompted explicit context, source-to-claim checks and a clear contribution; they did not identify specific suspect references.
+
+## Evidence and limits
+
+`evidence/test-results.txt` records 25 passing automated checks. `evidence/scenario-replays.json` contains five deterministic traces, not participant responses. `evidence/browser-checks.txt` records UI walkthroughs. `docs/source-audit.txt` links each report claim to an original source and its boundary. Report word counts are generated from source, including status-table text.
+
+No evidence here establishes lower cognitive load, greater satisfaction or superior repair performance. The schedule is visible in every condition. Omission is configured, ranking is fixed, lexical interpretation is limited, and only the latest cancellation can be undone.
+
+## AI assistance
+
+OpenAI Codex generated the prototype, checks, diagrams, storyboards, report and this README following the student's selected research topic and supplied brief. It ran automated checks and browser walkthroughs, checked cited source passages and revised claims to distinguish implementation from simulation. The student supplied the topic, assignment requirements and feedback screenshots. Student execution, understanding, independent review and final edits have not been verified by the agent. No participant data, feedback or development history was invented.
+
+## Submission and publication
+
+The report is in `docs/Assignment_2_Project_Report.docx` and its PDF counterpart. Architecture, storyboards and an interface screenshot are in `docs/`. Source files and evidence belong in the public repository; no separate ZIP submission is needed when they are there.
+
+This checkout has local Git history but has not yet been published to a GitHub account. Add the real repository and README URLs to the report, identify the submitted commit and verify public access before submission. No API keys are used or required.
