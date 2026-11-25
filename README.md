@@ -1,6 +1,5 @@
 # RepairLab
 
-README prose word count: approximately 671 (excluding code blocks and setup commands).
 
 ## Project status
 
