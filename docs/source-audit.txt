@@ -31,7 +31,10 @@ Boundary: guideline alignment is a design rationale, not proof of usability.
 
 COURSE MATERIAL
 Supplied W01 L02, W02 L04-L06 and W03 L07-L09 inform the conceptual spine, feedback, recognition, gulfs, repair and separation of generation from execution.
-No Week 4 lecture file was supplied when this version was prepared; no invented Week 4 quotation or page reference is used.
+Week 4 sources supplied and checked in this revision:
+L10, PDF pages 4-5, 9-12 and 17: context origins, memory lifetime, inspectability and storing less. Used to explain transient session state; no long-term personal memory is claimed.
+L11, PDF pages 7-10 and 17: coverage is not guaranteed by similarity, provenance and deciding whether retrieval is needed. Used to justify bounded exact lookup; no vector search or RAG is claimed.
+L12, PDF pages 5, 8 and 12-14: proposals versus execution, precondition/confirmation/idempotency checks, and reporting from actual results. Used to explain the local controller; no authentication, connector or durable idempotency is claimed.
 
 FEEDBACK BOUNDARY
 The supplied A1 screenshots show zero scores and rubric descriptors. They do not identify specific suspect citations or give a narrative explanation of all deductions. This report responds to the visible criteria; it does not assert the marker's unstated reasons.

@@ -43,6 +43,7 @@ HTML and CSS provide the browser interface. `app.js` renders DOM state and binds
 - `bf5d947`: implemented the bounded controller and 25 behavioural checks before building the interface.
 - `cf29515`: added the schedule, conversation, strategy selection, omission demo, confirmation and recovery controls.
 - `33ae597`: recorded reproducible replays, citation boundaries and an actual browser screenshot.
+- Week 4 revision: checked L10-L12 and added session-lifetime, exact-lookup and execution-boundary rationale; prototype behaviour unchanged.
 - Subsequent commits add documentation, report assets and verification records; use `git log --oneline` to inspect the actual history. Commits identify Codex-assisted development rather than attributing unperformed work to the student.
 
 The shared core keeps prompt comparisons from silently changing action logic. The report narrows the earlier broad superiority question to inspectable correction and cancellation boundaries. Teacher rubric screenshots prompted explicit context, source-to-claim checks and a clear contribution; they did not identify specific suspect references.
@@ -59,6 +60,6 @@ OpenAI Codex generated the prototype, checks, diagrams, storyboards, report and 
 
 ## Submission and publication
 
-The report is in `docs/Assignment_2_Project_Report.docx` and its PDF counterpart. Architecture, storyboards and an interface screenshot are in `docs/`. Source files and evidence belong in the public repository; no separate ZIP submission is needed when they are there.
+The report is in `docs/Assignment_2_Project_Report_Week4.docx` and its PDF counterpart; these Week4 files are the current report, superseding the original version. Architecture, storyboards and an interface screenshot are in `docs/`. Source files and evidence belong in the public repository; no separate ZIP submission is needed when they are there.
 
 This checkout has local Git history but has not yet been published to a GitHub account. Add the real repository and README URLs to the report, identify the submitted commit and verify public access before submission. No API keys are used or required.

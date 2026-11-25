@@ -8,3 +8,6 @@ The independent ReportLab PDF generated from the same source also contains six p
 
 Word count is generated from source: main text including its section headings and status-table words 938; abstract 185; total 1123. Title, references, repository metadata and short figure labels/captions are excluded. Word's full-document counter also includes references and therefore differs.
 The repository URL is still pending publication; it is not fabricated.
+
+WEEK 4 REVISION
+The revised DOCX was opened in Word and exported through Save As to a fresh PDF. Its six pages were rendered and inspected. Current main count including headings and status table: 1054; abstract: 185; total: 1239. The Week4 filenames are authoritative for this revision. Prototype source and its 25 checked behaviours are unchanged.

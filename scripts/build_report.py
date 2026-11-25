@@ -14,6 +14,7 @@ from reportlab.lib.enums import TA_LEFT
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs'
+REPORT_NAME='Assignment_2_Project_Report_Week4'
 data=json.loads((DOCS/'report-source.json').read_text(encoding='utf-8'))
 replays=json.loads((ROOT/'evidence/scenario-replays.json').read_text(encoding='utf-8'))['cases']
 FONTS=Path('C:/Windows/Fonts')
@@ -129,10 +130,10 @@ page();text('Repository and development evidence','head');text(source_note,'smal
 for r in data['references']:
  text(r['text'],'small')
  if r['url']:text(r['url'],'small')
-doc.core_properties.title=data['title'];doc.core_properties.author='';doc.save(DOCS/'Assignment_2_Project_Report.docx')
+doc.core_properties.title=data['title'];doc.core_properties.author='';doc.save(DOCS/(REPORT_NAME+'.docx'))
 def footer(canvas,document):
  canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#5b6975'));canvas.drawRightString(7.72*72,.35*72,str(document.page))
-pdf=SimpleDocTemplate(str(DOCS/'Assignment_2_Project_Report.pdf'),pagesize=(612,792),leftMargin=.78*72,rightMargin=.78*72,topMargin=.65*72,bottomMargin=.65*72,title=data['title'],author='')
+pdf=SimpleDocTemplate(str(DOCS/(REPORT_NAME+'.pdf')),pagesize=(612,792),leftMargin=.78*72,rightMargin=.78*72,topMargin=.65*72,bottomMargin=.65*72,title=data['title'],author='')
 pdf.build(flow,onFirstPage=footer,onLaterPages=footer)
 (ROOT/'evidence/word-counts.json').write_text(json.dumps({'abstract':abstract_words,'main_including_headings_and_status_table':main_words,'total':main_words+abstract_words,'method':'whitespace split; excludes title, references, repository links, captions and short figure labels','source_checkpoint':commit},indent=2),encoding='utf-8')
 print(meta);print('Wrote DOCX, PDF, architecture and three storyboards.')

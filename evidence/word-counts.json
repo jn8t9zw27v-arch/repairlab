@@ -1,7 +1,7 @@
 {
   "abstract": 185,
-  "main_including_headings_and_status_table": 938,
-  "total": 1123,
+  "main_including_headings_and_status_table": 1054,
+  "total": 1239,
   "method": "whitespace split; excludes title, references, repository links, captions and short figure labels",
-  "source_checkpoint": "dbfde2e00d6536001f91a7e8b434a2277156d744"
+  "source_checkpoint": "7055a40a79ffb7259a261742513fbab9b89d9a93"
 }
