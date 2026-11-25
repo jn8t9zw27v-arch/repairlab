@@ -1,6 +1,6 @@
 # RepairLab
 
-README prose word count: approximately 642 (excluding code blocks and setup commands).
+README prose word count: approximately 671 (excluding code blocks and setup commands).
 
 ## Project status
 
@@ -60,6 +60,10 @@ OpenAI Codex generated the prototype, checks, diagrams, storyboards, report and 
 
 ## Submission and publication
 
-The report is in `docs/Assignment_2_Project_Report_Week4.docx` and its PDF counterpart; these Week4 files are the current report, superseding the original version. Architecture, storyboards and an interface screenshot are in `docs/`. Source files and evidence belong in the public repository; no separate ZIP submission is needed when they are there.
+The report is in `docs/Assignment_2_Project_Report_GitHub.docx` and its PDF counterpart; these GitHub files are the current report, superseding the original version. Architecture, storyboards and an interface screenshot are in `docs/`. Source files and evidence belong in the public repository; no separate ZIP submission is needed when they are there.
 
-This checkout has local Git history but has not yet been published to a GitHub account. Add the real repository and README URLs to the report, identify the submitted commit and verify public access before submission. No API keys are used or required.
+Repository: https://github.com/jn8t9zw27v-arch/repairlab
+
+README: https://github.com/jn8t9zw27v-arch/repairlab/blob/main/README.md
+
+Submission version: `v1.2.0`. Inspect that immutable snapshot at https://github.com/jn8t9zw27v-arch/repairlab/tree/v1.2.0 after upload. Use `Publish_To_GitHub.cmd` or `git push -u origin main --tags` from this checkout, completing normal GitHub sign-in if requested. Verify public access before submission. No API keys are used or required.

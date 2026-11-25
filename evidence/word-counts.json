@@ -3,5 +3,5 @@
   "main_including_headings_and_status_table": 1054,
   "total": 1239,
   "method": "whitespace split; excludes title, references, repository links, captions and short figure labels",
-  "source_checkpoint": "7055a40a79ffb7259a261742513fbab9b89d9a93"
+  "source_checkpoint": "b15d838dd4c720b2a249299ddbe5be3917872da4"
 }

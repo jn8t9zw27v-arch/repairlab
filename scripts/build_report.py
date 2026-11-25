@@ -14,7 +14,7 @@ from reportlab.lib.enums import TA_LEFT
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs'
-REPORT_NAME='Assignment_2_Project_Report_Week4'
+REPORT_NAME='Assignment_2_Project_Report_GitHub'
 data=json.loads((DOCS/'report-source.json').read_text(encoding='utf-8'))
 replays=json.loads((ROOT/'evidence/scenario-replays.json').read_text(encoding='utf-8'))['cases']
 FONTS=Path('C:/Windows/Fonts')
@@ -76,7 +76,13 @@ readme=re.sub(r'README prose word count:.*',f'README prose word count: approxima
 (ROOT/'README.md').write_text(readme,encoding='utf-8')
 commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
 meta=f'Main report {main_words} words | Abstract {abstract_words} words | Total {main_words+abstract_words} words'
-source_note=f'Public repository: not yet published. Local source checkpoint: {commit[:12]}. README: ../README.md.'
+source_notes=[
+ 'Repository: https://github.com/jn8t9zw27v-arch/repairlab',
+ 'README: https://github.com/jn8t9zw27v-arch/repairlab/blob/main/README.md',
+ 'Submission version: v1.2.0',
+ 'Version link: https://github.com/jn8t9zw27v-arch/repairlab/tree/v1.2.0',
+ f'Local source checkpoint: {commit[:12]}. The release tag identifies the submitted snapshot.'
+]
 
 doc=Document()
 for st in doc.styles:
@@ -126,7 +132,9 @@ rt=Table(status,colWidths=[W*.67,W*.33]);rt.setStyle(TableStyle([('BACKGROUND',(
 page();text('Storyboards','head')
 for i,caption in enumerate(['Correct candidate selection followed by confirmation and undo.','Rejection and repair when the intended record is omitted.','Correction replaces a pending interpretation before any cancellation.']):picture(f'storyboard-{i+1}.png',6.9,f'Figure {i+2}. {caption}')
 page();section(3);picture('ui-options.png',4.55,'Figure 5. Actual browser view of candidate clarification and its rejection control.')
-page();text('Repository and development evidence','head');text(source_note,'small');text('Development record and AI assistance are in README.md; executable checks and replay traces are in evidence/.','small');text('References','head')
+page();text('Repository and development evidence','head')
+for note in source_notes:text(note,'small')
+text('Development record and AI assistance are in README.md; executable checks and replay traces are in evidence/.','small');text('References','head')
 for r in data['references']:
  text(r['text'],'small')
  if r['url']:text(r['url'],'small')

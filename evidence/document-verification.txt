@@ -11,3 +11,6 @@ The repository URL is still pending publication; it is not fabricated.
 
 WEEK 4 REVISION
 The revised DOCX was opened in Word and exported through Save As to a fresh PDF. Its six pages were rendered and inspected. Current main count including headings and status table: 1054; abstract: 185; total: 1239. The Week4 filenames are authoritative for this revision. Prototype source and its 25 checked behaviours are unchanged.
+
+GITHUB LINK REVISION
+Added the user-supplied repository, README and v1.2.0 version links to page 6. Opened the revised DOCX in Word, exported a fresh PDF, rendered all six pages with Poppler and inspected them. Body and abstract remain 1054 and 185 words. Upload has not succeeded: sandbox Git credential-manager startup failed. Publish_To_GitHub.cmd lets the user perform normal authenticated upload outside this environment.
