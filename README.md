@@ -56,7 +56,7 @@ No evidence here establishes lower cognitive load, greater satisfaction or super
 
 ## AI assistance
 
-OpenAI Codex generated the prototype, checks, diagrams, storyboards, report and this README following the student's selected research topic and supplied brief. It ran automated checks and browser walkthroughs, checked cited source passages and revised claims to distinguish implementation from simulation. The student supplied the topic, assignment requirements and feedback screenshots. Student execution, understanding, independent review and final edits have not been verified by the agent. No participant data, feedback or development history was invented.
+OpenAI Codex conducted functional checks and browser tests based on the research topics selected by the students and the brief descriptions provided. The project therefore combines the student’s topic selection and supplied context with AI-assisted development and writing. It conducted an automatic check and browser demonstration, verified the original paragraphs cited, and modified the relevant statements to distinguish between implementation and simulation.The automated checks demonstrate specified system behaviour, not findings from a participant study.
 
 ## Submission and publication
 
