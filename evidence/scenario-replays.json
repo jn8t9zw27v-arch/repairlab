@@ -1,0 +1,698 @@
+{
+  "type": "deterministic functional replay, not participant data",
+  "cases": [
+    {
+      "name": "correct candidate",
+      "strategy": "options",
+      "limit": 3,
+      "frames": [
+        {
+          "action": "input",
+          "input": "Cancel my appointment",
+          "response": "I found more than one possible appointment. Select the one you mean, or choose “None of these” and describe it. Showing 3 of 3 possible records.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [
+            "A101",
+            "A102",
+            "A103"
+          ],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "choose",
+          "input": "A101",
+          "response": "I understood: cancel Dental check, Tuesday 2026-12-01 at 09:30 (A101). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A101",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "confirm",
+          "input": null,
+          "response": "Cancelled Dental check (A101) in this local simulation only. No real provider was contacted. You can undo this change.",
+          "phase": "done",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "cancelled"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "undo",
+          "input": null,
+          "response": "Restored Dental check (A101). It is active again in the local simulation.",
+          "phase": "idle",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "step": 1,
+          "type": "input",
+          "detail": "Cancel my appointment"
+        },
+        {
+          "step": 2,
+          "type": "response",
+          "detail": "I found more than one possible appointment. Select the one you mean, or choose “None of these” and describe it. Showing 3 of 3 possible records."
+        },
+        {
+          "step": 3,
+          "type": "choose",
+          "detail": "A101"
+        },
+        {
+          "step": 4,
+          "type": "preview",
+          "detail": "A101"
+        },
+        {
+          "step": 5,
+          "type": "response",
+          "detail": "I understood: cancel Dental check, Tuesday 2026-12-01 at 09:30 (A101). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 6,
+          "type": "cancelled",
+          "detail": "A101"
+        },
+        {
+          "step": 7,
+          "type": "response",
+          "detail": "Cancelled Dental check (A101) in this local simulation only. No real provider was contacted. You can undo this change."
+        },
+        {
+          "step": 8,
+          "type": "undo",
+          "detail": "A101"
+        },
+        {
+          "step": 9,
+          "type": "response",
+          "detail": "Restored Dental check (A101). It is active again in the local simulation."
+        }
+      ]
+    },
+    {
+      "name": "omitted intention",
+      "strategy": "options",
+      "limit": 2,
+      "frames": [
+        {
+          "action": "input",
+          "input": "Cancel my appointment",
+          "response": "I found more than one possible appointment. Select the one you mean, or choose “None of these” and describe it. Showing 2 of 3 possible records.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [
+            "A101",
+            "A102"
+          ],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "reject",
+          "input": null,
+          "response": "None of these matches your intention. Please give the service, date or ID you meant. You do not have to choose a listed option.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "input",
+          "input": "Friday",
+          "response": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A103",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "confirm",
+          "input": null,
+          "response": "Cancelled Physiotherapy (A103) in this local simulation only. No real provider was contacted. You can undo this change.",
+          "phase": "done",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "cancelled"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "step": 1,
+          "type": "input",
+          "detail": "Cancel my appointment"
+        },
+        {
+          "step": 2,
+          "type": "response",
+          "detail": "I found more than one possible appointment. Select the one you mean, or choose “None of these” and describe it. Showing 2 of 3 possible records."
+        },
+        {
+          "step": 3,
+          "type": "reject_candidates",
+          "detail": [
+            "A101",
+            "A102"
+          ]
+        },
+        {
+          "step": 4,
+          "type": "response",
+          "detail": "None of these matches your intention. Please give the service, date or ID you meant. You do not have to choose a listed option."
+        },
+        {
+          "step": 5,
+          "type": "input",
+          "detail": "Friday"
+        },
+        {
+          "step": 6,
+          "type": "preview",
+          "detail": "A103"
+        },
+        {
+          "step": 7,
+          "type": "response",
+          "detail": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 8,
+          "type": "cancelled",
+          "detail": "A103"
+        },
+        {
+          "step": 9,
+          "type": "response",
+          "detail": "Cancelled Physiotherapy (A103) in this local simulation only. No real provider was contacted. You can undo this change."
+        }
+      ]
+    },
+    {
+      "name": "correct before acting",
+      "strategy": "options",
+      "limit": 3,
+      "frames": [
+        {
+          "action": "input",
+          "input": "Cancel dental",
+          "response": "I understood: cancel Dental check, Tuesday 2026-12-01 at 09:30 (A101). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A101",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "back",
+          "input": null,
+          "response": "The proposed cancellation was discarded. Which service, date or ID did you mean? Nothing has changed.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "input",
+          "input": "eye",
+          "response": "I understood: cancel Eye appointment, Thursday 2026-12-03 at 14:00 (A102). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A102",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "confirm",
+          "input": null,
+          "response": "Cancelled Eye appointment (A102) in this local simulation only. No real provider was contacted. You can undo this change.",
+          "phase": "done",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "cancelled"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "step": 1,
+          "type": "input",
+          "detail": "Cancel dental"
+        },
+        {
+          "step": 2,
+          "type": "preview",
+          "detail": "A101"
+        },
+        {
+          "step": 3,
+          "type": "response",
+          "detail": "I understood: cancel Dental check, Tuesday 2026-12-01 at 09:30 (A101). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 4,
+          "type": "correct",
+          "detail": "A101"
+        },
+        {
+          "step": 5,
+          "type": "response",
+          "detail": "The proposed cancellation was discarded. Which service, date or ID did you mean? Nothing has changed."
+        },
+        {
+          "step": 6,
+          "type": "input",
+          "detail": "eye"
+        },
+        {
+          "step": 7,
+          "type": "preview",
+          "detail": "A102"
+        },
+        {
+          "step": 8,
+          "type": "response",
+          "detail": "I understood: cancel Eye appointment, Thursday 2026-12-03 at 14:00 (A102). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 9,
+          "type": "cancelled",
+          "detail": "A102"
+        },
+        {
+          "step": 10,
+          "type": "response",
+          "detail": "Cancelled Eye appointment (A102) in this local simulation only. No real provider was contacted. You can undo this change."
+        }
+      ]
+    },
+    {
+      "name": "general repetition",
+      "strategy": "repeat",
+      "limit": 3,
+      "frames": [
+        {
+          "action": "input",
+          "input": "Cancel my appointment",
+          "response": "I did not understand which appointment you mean. Please say your request again.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "input",
+          "input": "Cancel my appointment",
+          "response": "I did not understand which appointment you mean. Please say your request again.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "input",
+          "input": "Friday",
+          "response": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A103",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "stop",
+          "input": null,
+          "response": "Request stopped. No pending cancellation was applied.",
+          "phase": "idle",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "step": 1,
+          "type": "input",
+          "detail": "Cancel my appointment"
+        },
+        {
+          "step": 2,
+          "type": "response",
+          "detail": "I did not understand which appointment you mean. Please say your request again."
+        },
+        {
+          "step": 3,
+          "type": "input",
+          "detail": "Cancel my appointment"
+        },
+        {
+          "step": 4,
+          "type": "response",
+          "detail": "I did not understand which appointment you mean. Please say your request again."
+        },
+        {
+          "step": 5,
+          "type": "input",
+          "detail": "Friday"
+        },
+        {
+          "step": 6,
+          "type": "preview",
+          "detail": "A103"
+        },
+        {
+          "step": 7,
+          "type": "response",
+          "detail": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 8,
+          "type": "stop",
+          "detail": "A103"
+        },
+        {
+          "step": 9,
+          "type": "response",
+          "detail": "Request stopped. No pending cancellation was applied."
+        }
+      ]
+    },
+    {
+      "name": "targeted question",
+      "strategy": "targeted",
+      "limit": 3,
+      "frames": [
+        {
+          "action": "input",
+          "input": "Cancel my appointment",
+          "response": "Which appointment do you want to cancel? Please give its service, date or ID.",
+          "phase": "repair",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "input",
+          "input": "Friday",
+          "response": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it.",
+          "phase": "preview",
+          "pending": "A103",
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        },
+        {
+          "action": "stop",
+          "input": null,
+          "response": "Request stopped. No pending cancellation was applied.",
+          "phase": "idle",
+          "pending": null,
+          "candidates": [],
+          "records": [
+            {
+              "id": "A101",
+              "status": "active"
+            },
+            {
+              "id": "A102",
+              "status": "active"
+            },
+            {
+              "id": "A103",
+              "status": "active"
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "step": 1,
+          "type": "input",
+          "detail": "Cancel my appointment"
+        },
+        {
+          "step": 2,
+          "type": "response",
+          "detail": "Which appointment do you want to cancel? Please give its service, date or ID."
+        },
+        {
+          "step": 3,
+          "type": "input",
+          "detail": "Friday"
+        },
+        {
+          "step": 4,
+          "type": "preview",
+          "detail": "A103"
+        },
+        {
+          "step": 5,
+          "type": "response",
+          "detail": "I understood: cancel Physiotherapy, Friday 2026-12-04 at 11:15 (A103). Nothing has changed. Confirm below, or go back to correct it."
+        },
+        {
+          "step": 6,
+          "type": "stop",
+          "detail": "A103"
+        },
+        {
+          "step": 7,
+          "type": "response",
+          "detail": "Request stopped. No pending cancellation was applied."
+        }
+      ]
+    }
+  ]
+}

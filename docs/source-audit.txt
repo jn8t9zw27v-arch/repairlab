@@ -1,0 +1,38 @@
+SOURCE CHECKS FOR THE PROJECT REPORT
+Checked 25 November 2026 against the original PDFs, not search summaries.
+
+1. Bohus and Rudnicky (2005), Sorry, I Didn't Catch That!
+https://aclanthology.org/2005.sigdial-1.14.pdf
+Location: section 2/Table 1, PDF pages 2-3; section 5, PDF pages 6-8.
+Supported claim: the study distinguishes AskRepeat, AskRephrase, Reprompt and example-based help as different strategies.
+Design use: implement separate strategy conditions; do not equate a sample answer with a candidate intent.
+Boundary: telephone non-understanding is not identical to textual semantic ambiguity; no universal option advantage claimed.
+
+2. Stoyanchev, Liu and Hirschberg (2014), Towards Natural Clarification Questions in Dialogue Systems
+https://www.cs.columbia.edu/speech/PaperFiles/2014/AISB2014_StoyanchevLiuHirschberg_final.pdf
+Location: introduction, PDF pages 1-2; Table 4/section 5, PDF pages 5-6.
+Supported claim: targeted clarification distinguishes understood material from a missing part; evaluation includes question quality and preference.
+Design use: targeted-question condition asks for the missing appointment identifier.
+Boundary: the project does not reproduce their question-generation algorithm or claim reduced cognitive load.
+
+3. Hu et al. (2020), Interactive Question Clarification in Dialogue via Reinforcement Learning
+https://aclanthology.org/2020.coling-industry.8.pdf
+Location: Figure 1/introduction, PDF page 1; section 5.2, PDF pages 6-7.
+Supported claim: intent labels refine ambiguous queries; coverage, click-through and human transfer are evaluation measures.
+Design use: selectable candidate interpretations and explicit inspection of candidate coverage.
+Boundary: RepairLab uses fixed-order records, not reinforcement learning or semantic ranking; no user performance improvement claimed.
+
+4. Amershi et al. (2019), Guidelines for Human-AI Interaction
+https://www.microsoft.com/en-us/research/wp-content/uploads/2019/01/Guidelines-for-Human-AI-Interaction-camera-ready.pdf
+Location: Table 1, PDF page 3.
+Supported claim: G1 capability disclosure; G8 dismissal; G9 correction; G10 scope or disambiguate under uncertainty; G11 explanation; G16 future consequences.
+Design use: visible scope, candidate rejection, correction, bounded action and interpretation preview.
+Boundary: guideline alignment is a design rationale, not proof of usability.
+
+COURSE MATERIAL
+Supplied W01 L02, W02 L04-L06 and W03 L07-L09 inform the conceptual spine, feedback, recognition, gulfs, repair and separation of generation from execution.
+No Week 4 lecture file was supplied when this version was prepared; no invented Week 4 quotation or page reference is used.
+
+FEEDBACK BOUNDARY
+The supplied A1 screenshots show zero scores and rubric descriptors. They do not identify specific suspect citations or give a narrative explanation of all deductions. This report responds to the visible criteria; it does not assert the marker's unstated reasons.
+Muller et al. (2021) was not used in the A2 report because the earlier work had only abstract-level access.

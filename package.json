@@ -1,0 +1,10 @@
+{
+  "name": "repairlab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local coursework prototype for appointment clarification and correction",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "replay": "node scripts/replay.cjs"
+  }
+}
