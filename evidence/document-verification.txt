@@ -1,0 +1,10 @@
+DOCUMENT VERIFICATION
+25 November 2026
+
+The canonical render_docx.py command was attempted and failed because LibreOffice soffice.exe is not installed in the runtime PATH.
+Fallback: opened the generated DOCX in Microsoft Word through UI automation, corrected inherited title borders in the builder, reopened the corrected DOCX, and exported a verification PDF through Word's Save As dialog.
+The Word export contains six pages. All six page images were rendered with pypdfium2 and visually inspected for clipping, missing content, broken tables and figure/caption separation.
+The independent ReportLab PDF generated from the same source also contains six pages. The final delivered PDF is the Word export so that it follows the editable report's pagination.
+
+Word count is generated from source: main text including its section headings and status-table words 938; abstract 185; total 1123. Title, references, repository metadata and short figure labels/captions are excluded. Word's full-document counter also includes references and therefore differs.
+The repository URL is still pending publication; it is not fabricated.
